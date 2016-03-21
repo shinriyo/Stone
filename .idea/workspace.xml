@@ -7,15 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4fc9b7d-2971-4363-9789-4d6605a2e5b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chap5/ParserRunner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stone/BasicParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stone/Parser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/stone/ast/PrimaryExpr.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/stone/chap3/LexerRunner.java" afterPath="$PROJECT_DIR$/src/chap3/LexerRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stone/stone/Token.class" afterPath="$PROJECT_DIR$/out/production/Stone/stone/Token.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stone/stone/BasicParser.class" afterPath="$PROJECT_DIR$/out/production/Stone/stone/BasicParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stone/Token.java" afterPath="$PROJECT_DIR$/src/stone/Token.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stone/ast/ASTList.java" afterPath="$PROJECT_DIR$/src/stone/ast/ASTList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/stone/BasicParser.java" afterPath="$PROJECT_DIR$/src/stone/BasicParser.java" />
     </list>
     <ignored path="Stone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasicParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/stone/BasicParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.7567568">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#238#246#0" expanded="true" />
@@ -85,28 +79,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/stone/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.704955">
-              <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="392" column="0" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3738#3739#0" expanded="true" />
-                <element signature="e#3820#3821#0" expanded="true" />
-                <element signature="e#4952#4953#0" expanded="true" />
-                <element signature="e#4999#5000#0" expanded="true" />
-                <element signature="e#5903#5904#0" expanded="true" />
-                <element signature="e#5969#5970#0" expanded="true" />
-                <element signature="e#10240#10248#0" expanded="true" />
-                <element signature="e#10715#10716#0" expanded="true" />
-                <element signature="e#10755#10756#0" expanded="true" />
-                <element signature="e#11061#11062#0" expanded="true" />
-                <element signature="e#11096#11097#0" expanded="true" />
-                <element signature="e#11282#11283#0" expanded="true" />
-                <element signature="e#11331#11332#0" expanded="true" />
-                <element signature="e#11528#11529#0" expanded="true" />
-                <element signature="e#11563#11564#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -218,10 +197,10 @@
         <option value="$PROJECT_DIR$/src/chap3/LexerRunner.java" />
         <option value="$PROJECT_DIR$/src/stone/Token.java" />
         <option value="$PROJECT_DIR$/src/stone/ast/PrimaryExpr.java" />
-        <option value="$PROJECT_DIR$/src/stone/BasicParser.java" />
-        <option value="$PROJECT_DIR$/src/stone/Parser.java" />
         <option value="$PROJECT_DIR$/src/chap5/ParserRunner.java" />
         <option value="$PROJECT_DIR$/src/stone/ast/WhileStmnt.java" />
+        <option value="$PROJECT_DIR$/src/stone/Parser.java" />
+        <option value="$PROJECT_DIR$/src/stone/BasicParser.java" />
       </list>
     </option>
   </component>
@@ -233,8 +212,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="87" />
+    <option name="x" value="83" />
+    <option name="y" value="23" />
     <option name="width" value="1225" />
     <option name="height" value="773" />
   </component>
@@ -648,7 +627,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="87" width="1225" height="773" extended-state="0" />
+    <frame x="83" y="23" width="1225" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -945,17 +924,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/stone/BasicParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#238#246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stone/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1029,25 +997,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/stone/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.704955">
-          <caret line="138" column="0" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="392" column="0" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3738#3739#0" expanded="true" />
-            <element signature="e#3820#3821#0" expanded="true" />
-            <element signature="e#4952#4953#0" expanded="true" />
-            <element signature="e#4999#5000#0" expanded="true" />
-            <element signature="e#5903#5904#0" expanded="true" />
-            <element signature="e#5969#5970#0" expanded="true" />
-            <element signature="e#10240#10248#0" expanded="true" />
-            <element signature="e#10715#10716#0" expanded="true" />
-            <element signature="e#10755#10756#0" expanded="true" />
-            <element signature="e#11061#11062#0" expanded="true" />
-            <element signature="e#11096#11097#0" expanded="true" />
-            <element signature="e#11282#11283#0" expanded="true" />
-            <element signature="e#11331#11332#0" expanded="true" />
-            <element signature="e#11528#11529#0" expanded="true" />
-            <element signature="e#11563#11564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/stone/BasicParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7567568">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#238#246#0" expanded="true" />
           </folding>
         </state>
       </provider>
