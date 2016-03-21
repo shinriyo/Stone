@@ -1,4 +1,4 @@
-package stone.chap3;
+package hap3;
 import stone.*;
 
 /**
