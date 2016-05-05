@@ -5,11 +5,7 @@ import stone.StoneException;
 import stone.ast.*;
 import java.util.List;
 
-
-/**
- * Created by shinriyo on 3/21/16.
- */
-public class BasicEvaluator {
+@Reviser public class BasicEvaluator {
     public static final int TRUE = 1;
     public static final int FALSE = 0;
     @Reviser public static abstract class ASTreeEx extends ASTree {
@@ -23,15 +19,13 @@ public class BasicEvaluator {
     }
     @Reviser public static class ASTLeafEx extends ASTLeaf {
         public ASTLeafEx(Token t) { super(t); }
-        public Object StonrEception(Token env) {
+        public Object eval(Environment env) {
             throw new StoneException("cannot eval: " + toString(), this);
         }
     }
     @Reviser public static class NumberEx extends NumberLiteral {
         public NumberEx(Token t) { super(t); }
-        public Object eval(Environment e) {
-            return value();
-        }
+        public Object eval(Environment e) { return value(); }
     }
     @Reviser public static class StringEx extends StringLiteral {
         public StringEx(Token t) { super(t); }
@@ -47,19 +41,19 @@ public class BasicEvaluator {
                 return value;
         }
     }
-    @Reviser public static class NavigateEx extends NegativeExpr {
-        public NavigateEx(List<ASTree> c) { super(c); }
+    @Reviser public static class NegativeEx extends NegativeExpr {
+        public NegativeEx(List<ASTree> c) { super(c); }
         public Object eval(Environment env) {
             Object v = ((ASTreeEx)operand()).eval(env);
-            if(v instanceof Integer)
+            if (v instanceof Integer)
                 return new Integer(-((Integer)v).intValue());
             else
                 throw new StoneException("bad type for -", this);
         }
     }
     @Reviser public static class BinaryEx extends BinaryExpr {
-        public BinaryEx(List<ASTree> c){ super(c); }
-        public Object eval(Environment env){
+        public BinaryEx(List<ASTree> c) { super(c); }
+        public Object eval(Environment env) {
             String op = operator();
             if ("=".equals(op)) {
                 Object right = ((ASTreeEx)right()).eval(env);
@@ -85,16 +79,16 @@ public class BasicEvaluator {
                 return computeNumber((Integer)left, op, (Integer)right);
             }
             else
-                if (op.equals("+"))
-                    return String.valueOf(left) + String.valueOf(right);
-                else if (op.equals("==")) {
-                    if (left == null)
-                        return right == null ? TRUE : FALSE;
-                    else
-                        return left.equals(right) ? TRUE : FALSE;
-                }
+            if (op.equals("+"))
+                return String.valueOf(left) + String.valueOf(right);
+            else if (op.equals("==")) {
+                if (left == null)
+                    return right == null ? TRUE : FALSE;
                 else
-                    throw new StoneException("bad type", this);
+                    return left.equals(right) ? TRUE : FALSE;
+            }
+            else
+                throw new StoneException("bad type", this);
         }
         protected Object computeNumber(Integer left, String op, Integer right) {
             int a = left.intValue();
@@ -119,8 +113,8 @@ public class BasicEvaluator {
                 throw new StoneException("bad operator", this);
         }
     }
-    @Reviser public static class BlackEx extends BlockStmnt {
-        public BlackEx(List<ASTree> c) { super(c); }
+    @Reviser public static class BlockEx extends BlockStmnt {
+        public BlockEx(List<ASTree> c) { super(c); }
         public Object eval(Environment env) {
             Object result = 0;
             for (ASTree t: this) {

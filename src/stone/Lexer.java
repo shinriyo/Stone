@@ -1,5 +1,4 @@
 package stone;
-
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.io.Reader;
@@ -7,12 +6,10 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by shinriyo on 2/27/16.
- */
 public class Lexer {
-    public static String regexPat = "\\s*((//.*)|([0-9]+)|(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")"
-                + "|[A-Z_a-z][A-Z_a-z0-9]*|==|<=|>=|&&|\\|\\||\\p{Punct})?";
+    public static String regexPat
+            = "\\s*((//.*)|([0-9]+)|(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")"
+            + "|[A-Z_a-z][A-Z_a-z0-9]*|==|<=|>=|&&|\\|\\||\\p{Punct})?";
     private Pattern pattern = Pattern.compile(regexPat);
     private ArrayList<Token> queue = new ArrayList<Token>();
     private boolean hasMore;
@@ -22,21 +19,18 @@ public class Lexer {
         hasMore = true;
         reader = new LineNumberReader(r);
     }
-
-    public Token read() throws ParseException  {
+    public Token read() throws ParseException {
         if (fillQueue(0))
             return queue.remove(0);
         else
             return Token.EOF;
     }
-
-    public Token peek(int i) throws ParseException  {
+    public Token peek(int i) throws ParseException {
         if (fillQueue(i))
             return queue.get(i);
         else
             return Token.EOF;
     }
-
     private boolean fillQueue(int i) throws ParseException {
         while (i >= queue.size())
             if (hasMore)
@@ -45,7 +39,6 @@ public class Lexer {
                 return false;
         return true;
     }
-
     protected void readLine() throws ParseException {
         String line;
         try {
@@ -90,9 +83,9 @@ public class Lexer {
     protected String toStringLiteral(String s) {
         StringBuilder sb = new StringBuilder();
         int len = s.length() - 1;
-        for (int i = 0; i < len; i++) {
+        for (int i = 1; i < len; i++) {
             char c = s.charAt(i);
-            if(c == '\\' && i + 1 < len) {
+            if (c == '\\' && i + 1 < len) {
                 int c2 = s.charAt(i + 1);
                 if (c2 == '"' || c2 == '\\')
                     c = s.charAt(++i);
@@ -105,6 +98,7 @@ public class Lexer {
         }
         return sb.toString();
     }
+
     protected static class NumToken extends Token {
         private int value;
 
@@ -116,9 +110,9 @@ public class Lexer {
         public String getText() { return Integer.toString(value); }
         public int getNumber() { return value; }
     }
+
     protected static class IdToken extends Token {
         private String text;
-
         protected IdToken(int line, String id) {
             super(line);
             text = id;
@@ -126,6 +120,7 @@ public class Lexer {
         public boolean isIdentifier() { return true; }
         public String getText() { return text; }
     }
+
     protected static class StrToken extends Token {
         private String literal;
         StrToken(int line, String str) {
@@ -133,6 +128,6 @@ public class Lexer {
             literal = str;
         }
         public boolean isString() { return true; }
-        public String getText() {return literal; }
+        public String getText() { return literal; }
     }
 }

@@ -1,9 +1,6 @@
 package stone.ast;
 import java.util.List;
 
-/**
- * Created by shinriyo on 3/6/16.
- */
 public class IfStmnt extends ASTList {
     public IfStmnt(List<ASTree> c) { super(c); }
     public ASTree condition() { return child(0); }
@@ -12,7 +9,7 @@ public class IfStmnt extends ASTList {
         return numChildren() > 2 ? child(2) : null;
     }
     public String toString() {
-        return "(" + condition() + " " + thenBlock()
+        return "(if " + condition() + " " + thenBlock()
                 + " else " + elseBlock() + ")";
     }
 }

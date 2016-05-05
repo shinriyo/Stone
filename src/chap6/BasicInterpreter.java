@@ -1,18 +1,14 @@
 package chap6;
 import stone.*;
-import stone.ParseException;
 import stone.ast.ASTree;
 import stone.ast.NullStmnt;
 
-
-/**
- * Created by shinriyo on 3/21/16.
- */
 public class BasicInterpreter {
     public static void main(String[] args) throws ParseException {
         run(new BasicParser(), new BasicEnv());
     }
-    public static void run(BasicParser bp, Environment env) throws ParseException
+    public static void run(BasicParser bp, Environment env)
+            throws ParseException
     {
         Lexer lexer = new Lexer(new CodeDialog());
         while (lexer.peek(0) != Token.EOF) {
