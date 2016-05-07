@@ -21,11 +21,30 @@ even + odd
 
 ```
 sum = 0
-i = 0
+i = 1
 while i < 10 {
-    sum = sum + 1
+    sum = sum + i
     i = i + 1
 }
 sum
 ```
 
+## chap7
+
+def fact (n) {
+    f = 1
+    while m > 0 {
+    f
+    }
+}
+
+### 7.12
+
+def fib (n) {
+    if n < 2 {
+        n
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
+}
+fib(10)

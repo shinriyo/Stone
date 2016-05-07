@@ -79,19 +79,19 @@ import java.util.List;
                 return computeNumber((Integer)left, op, (Integer)right);
             }
             else
-            if (op.equals("+"))
-                return String.valueOf(left) + String.valueOf(right);
-            else if (op.equals("==")) {
-                if (left == null)
-                    return right == null ? TRUE : FALSE;
+                if (op.equals("+"))
+                    return String.valueOf(left) + String.valueOf(right);
+                else if (op.equals("==")) {
+                    if (left == null)
+                        return right == null ? TRUE : FALSE;
+                    else
+                        return left.equals(right) ? TRUE : FALSE;
+                }
                 else
-                    return left.equals(right) ? TRUE : FALSE;
-            }
-            else
-                throw new StoneException("bad type", this);
+                    throw new StoneException("bad type", this);
         }
         protected Object computeNumber(Integer left, String op, Integer right) {
-            int a = left.intValue();
+            int a = left.intValue(); 
             int b = right.intValue();
             if (op.equals("+"))
                 return a + b;

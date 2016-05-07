@@ -8,7 +8,7 @@ public class BasicInterpreter {
         run(new BasicParser(), new BasicEnv());
     }
     public static void run(BasicParser bp, Environment env)
-            throws ParseException
+        throws ParseException
     {
         Lexer lexer = new Lexer(new CodeDialog());
         while (lexer.peek(0) != Token.EOF) {
