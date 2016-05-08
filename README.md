@@ -40,6 +40,7 @@ def fact (n) {
 
 ### 7.12
 
+```
 def fib (n) {
     if n < 2 {
         n
@@ -48,3 +49,42 @@ def fib (n) {
     }
 }
 fib(10)
+```
+
+### 7.5
+
+inc = fun (x) { x + 1 }
+inc(3)
+
+### p113
+
+```
+def counter (c) {
+    fun () { c = c + 1 }
+}
+
+c1 = counter(0)
+c2 = counter(0);
+c1()
+c1()
+c2()
+```
+
+### 7.12
+
+```
+def fib (n) {
+    if n < 2 {
+        n
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
+}
+fib(10)
+```
+### P118
+
+```
+x = 1
+def foo (i) { x = i; x + x }
+```
