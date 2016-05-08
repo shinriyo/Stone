@@ -26,9 +26,9 @@ import chap6.BasicEvaluator.BlockEx;
         }
     }
     @Reviser public static class PrimaryEx extends PrimaryExpr {
-        public PrimaryEx(List<ASTree> c){ super(c); }
-        public ASTree operand() { return child(0);}
-        public Postfix postfix(int nest){
+        public PrimaryEx(List<ASTree> c) { super(c); }
+        public ASTree operand() { return child(0); }
+        public Postfix postfix(int nest) {
             return (Postfix)child(numChildren() - nest - 1);
         }
         public boolean hasPostfix(int nest) { return numChildren() - nest > 1; }

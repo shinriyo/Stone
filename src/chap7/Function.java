@@ -18,5 +18,5 @@ public class Function {
     public ParameterList parameters() { return parameters; }
     public BlockStmnt body() { return body; }
     public Environment makeEnv() { return new NestedEnv(env); }
-    @Override public String toString() { return "<fun:" + hashCode() + ">";}
+    @Override public String toString() { return "<fun:" + hashCode() + ">"; }
 }

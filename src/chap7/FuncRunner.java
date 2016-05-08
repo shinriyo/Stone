@@ -5,7 +5,7 @@ import javassist.gluonj.util.Loader;
  * Created by shinriyo on 5/6/16.
  */
 public class FuncRunner {
-    public static void main(String[] args) throws  Throwable {
+    public static void main(String[] args) throws Throwable {
         Loader.run(FuncInterpreter.class, args, FuncEvaluator.class);
     }
 }

@@ -8,10 +8,11 @@ import chap7.FuncEvaluator.EnvEx;
  */
 public class NestedEnv implements Environment {
     protected HashMap<String,Object> values;
-    public Environment outer;
+    protected Environment outer;
     public NestedEnv() { this(null); }
     public NestedEnv(Environment e) {
         values = new HashMap<String,Object>();
+        outer = e;
     }
     public void setOuter(Environment e) { outer = e; }
     public Object get(String name) {
