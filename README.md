@@ -88,3 +88,18 @@ fib(10)
 x = 1
 def foo (i) { x = i; x + x }
 ```
+
+### 8.8
+
+```
+def fib (n) {
+    if n < 2 {
+        n
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
+}
+t = currentTime()
+fib 15
+print currentTime() - t + " msec"
+```
