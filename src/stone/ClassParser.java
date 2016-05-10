@@ -12,7 +12,7 @@ public class ClassParser extends ClosureParser {
     Parser class_body = rule(ClassBody.class).sep("{").option(member)
                         .repeat(rule().sep(";", Token.EOL).option(member))
                         .sep("}");
-    Parser defclass = rule(ClassBody.class).sep("class").option(member)
+    Parser defclass = rule(ClassStmnt.class).sep("class").identifier(reserved)
                           .option(rule().sep("extends").identifier(reserved))
                           .ast(class_body);
     public ClassParser() {
