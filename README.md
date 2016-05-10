@@ -103,3 +103,28 @@ t = currentTime()
 fib 15
 print currentTime() - t + " msec"
 ```
+
+### 9.1
+```
+class Position {
+    x = y = 0
+    def move(nx, ny) {
+        x = nx; y = ny
+    }
+}
+p = Position.new
+p.move(3, 4)
+p.x = 10
+print p.x + p.y
+```
+
+### P140
+
+```
+def position () {
+    x = y = 0
+    fun (nx, ny) {
+        x = nx; y = ny
+    }
+}
+```
