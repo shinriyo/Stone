@@ -146,3 +146,16 @@ b = [["one", 1], ["two", 2]]
 print b[0][1] + ": " + b[1][1]
 b = [["one", 1], ["two", 2]]
 ```
+
+### 11.8
+
+```
+def fib (n)
+    if n < 2
+        n
+    else
+        fib(n - 1) + fib(n - 2)
+    end
+end
+t = Time.now(); fib(33); puts Time.now - t
+```
