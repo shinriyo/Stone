@@ -34,8 +34,8 @@ public class ArrayEnv implements Environment {
     public void put(String name, Object value) { error(name); }
     public void putNew(String name, Object value) { error(name); }
     public Environment where(String name) { error(name); return null; }
-    public void setOuterw(Environment e) { outer = e; }
+    public void setOuter(Environment e) { outer = e; }
     public void error(String name) {
-        throw new StoneException("cannnot access by name:" + name);
+        throw new StoneException("cannnot access by name: " + name);
     }
 }

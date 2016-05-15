@@ -147,7 +147,7 @@ print b[0][1] + ": " + b[1][1]
 b = [["one", 1], ["two", 2]]
 ```
 
-### 11.8
+### 11.8 Ruby
 
 ```
 def fib (n)
@@ -157,5 +157,18 @@ def fib (n)
         fib(n - 1) + fib(n - 2)
     end
 end
-t = Time.now(); fib(33); puts Time.now - t
+t = Time.now; fib(33); puts Time.now - t
+```
+
+### Stone版
+
+```
+def fib (n) {
+    if n < 2 {
+        n
+    } else {
+        fib(n - 1) + fib(n - 2)
+    }
+}
+t = currentTime(); fib(33); print currentTime() - t
 ```

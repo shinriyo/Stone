@@ -14,7 +14,7 @@ import chap7.ClosureEvaluator;
  * Created by shinriyo on 5/12/16.
  */
 @Require(ClosureEvaluator.class)
-public class EnvOptimizer {
+@Reviser public class EnvOptimizer {
     @Reviser public static interface EnvEx2 extends Environment {
         Symbols symbols();
         void put(int nest, int index, Object value);
@@ -23,19 +23,18 @@ public class EnvOptimizer {
         Environment where(String name);
     }
     @Reviser public static abstract class ASTreeOptEx extends ASTree {
-        public void lookup(Symbols syms) {};
+        public void lookup(Symbols syms) {}
     }
-    @Reviser public static abstract class ASTListEx extends ASTList {
+    @Reviser public static class ASTListEx extends ASTList {
         public ASTListEx(List<ASTree> c) { super(c); }
-        public void lookUp(Symbols syms) {
-            for (ASTree t: this) {
+        public void lookup(Symbols syms) {
+            for (ASTree t: this)
                 ((ASTreeOptEx)t).lookup(syms);
-            }
         }
     }
     @Reviser public static class DefStmntEx extends DefStmnt {
         protected int index, size;
-        public DefStmntEx(List<ASTree> c) { super(c);}
+        public DefStmntEx(List<ASTree> c) { super(c); }
         public void lookup(Symbols syms) {
             index = syms.putNew(name());
             size = FunEx.lookup(syms, parameters(), body());
@@ -126,6 +125,7 @@ public class EnvOptimizer {
         protected Object computeAssign(Environment env, Object rvalue) {
             ASTree l = left();
             if (l instanceof Name) {
+               ((NameEx)l).evalForAssign(env, rvalue);
                return rvalue;
             }
             else
