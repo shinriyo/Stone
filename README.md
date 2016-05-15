@@ -172,3 +172,39 @@ def fib (n) {
 }
 t = currentTime(); fib(33); print currentTime() - t
 ```
+
+### 12.11
+
+```
+class Fib {
+    fib0 = 0
+    fib1 = 1
+    def fib (n) {
+        if n == 0 {
+            fib0
+        } else {
+            if n == 0 {
+                this.fib1
+            } else {
+                fib(n - 1) + this.fib(n - 2)
+            }
+        }
+    }
+}
+t = currentTime()
+f = Fib.new
+f.fib(33)
+print currentTime() - t + " msec"
+```
+
+### P181
+
+```
+class Position {
+    x = y = 1
+    def xmove(dx) { x = x + dx }
+}
+class Position3D extends Position {
+    z = 1
+}
+```
